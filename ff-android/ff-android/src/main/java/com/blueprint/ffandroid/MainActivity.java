@@ -27,11 +27,9 @@ public class MainActivity extends ActionBarActivity
     /** The donation object that is created and updated. */
     public Donation donation;
     /**Fragment declarations**/
-    TitleFragment titleFragment;
-    AmountFragment amountFragment;
     LocationFragment locationFragment;
-    PhotoFragment photoFragment;
     AccountFragment accountFragment;
+    FormFragment formFragment;
     Fragment currentFragment;
 
 
@@ -53,12 +51,10 @@ public class MainActivity extends ActionBarActivity
     }
 
     private void initializeFragments(){
-        titleFragment = TitleFragment.newInstance();
-        amountFragment = AmountFragment.newInstance();
         locationFragment = LocationFragment.newInstance();
-        photoFragment = PhotoFragment.newInstance();
         accountFragment = AccountFragment.newInstance();
-        currentFragment = titleFragment;
+        formFragment = FormFragment.newInstance();
+        currentFragment = locationFragment;
     }
 
     @Override
@@ -67,7 +63,7 @@ public class MainActivity extends ActionBarActivity
 
         switch (position) {
             case 0:
-                replaceFragment(titleFragment);
+                replaceFragment(locationFragment);
                 break;
             case 2:
                 replaceFragment(accountFragment);
